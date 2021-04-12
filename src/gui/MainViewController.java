@@ -11,7 +11,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-import model.entities.Department;
 import model.services.DepartmentService;
 
 import java.io.IOException;
@@ -53,7 +52,7 @@ public class MainViewController implements Initializable {
 
     }
 
-    // Função para abri uma outra tela.
+    // Função para abrir uma outra tela.
     private synchronized <T> void loadView(String absolutName, Consumer<T> initializingAction){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absolutName));
@@ -71,7 +70,7 @@ public class MainViewController implements Initializable {
             // função para executar a janela MenuItemDepartment e efetuar a lambda.
             T controller = loader.getController();
             initializingAction.accept(controller);
-            
+
         }
         catch (IOException ioException){
             Alerts.showAlerts("IO Exception","Error loading view",ioException.getMessage(), Alert.AlertType.ERROR);
