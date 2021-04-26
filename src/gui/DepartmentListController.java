@@ -91,6 +91,7 @@ public class DepartmentListController implements Initializable {
 
             DepartmentFormController controller = loader.getController();
             controller.setDepartment(obj);
+            controller.setDepartmentService(new DepartmentService());
             controller.updateFormData();
 
             Stage dialogStage = new Stage();
@@ -100,14 +101,11 @@ public class DepartmentListController implements Initializable {
             dialogStage.initOwner(parentStage);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.showAndWait();
-
-
         }
         catch (IOException ioException){
             Alerts.showAlerts("IO Exception","Error Loading view",
                     ioException.getMessage(), Alert.AlertType.ERROR);
 
         }
-
     }
 }
