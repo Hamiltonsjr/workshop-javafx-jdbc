@@ -22,7 +22,10 @@ public class DepartmentService {
         else {
             departmentDao.update(department);
         }
+    }
 
+    public void remove(Department obj){
+        departmentDao.deleteById(obj.getId());
     }
 
 }
