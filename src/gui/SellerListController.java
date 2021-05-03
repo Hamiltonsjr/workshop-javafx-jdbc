@@ -111,7 +111,7 @@ public class SellerListController implements Initializable, DataChangeListener {
     // janela de dialogo para abrir o formulário.
 
     private void createDialogForm(String absolutName, Stage parentStage, Seller obj) {
-       /* try {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absolutName));
             Pane pane = loader.load();
 
@@ -131,7 +131,7 @@ public class SellerListController implements Initializable, DataChangeListener {
         } catch (IOException ioException) {
             Alerts.showAlerts("IO Exception", "Error Loading view",
                     ioException.getMessage(), Alert.AlertType.ERROR);
-        }*/
+        }
     }
 
     @Override
